@@ -47,10 +47,12 @@ public class CharCount {
         Set<Character> myChars = chars();
         Set<Character> theirChars = new HashSet<>();
 
-        for (Character c : anotherCharCount.chars()
-        ) {
-            theirChars.add(c);
-        }
+        //可以用addAll来替换这个foreach
+//        for (Character c : anotherCharCount.chars()
+//        ) {
+//            theirChars.add(c);
+//        }
+        theirChars.addAll(anotherCharCount.chars());
         theirChars.retainAll(myChars);
         return theirChars.size();
     }
